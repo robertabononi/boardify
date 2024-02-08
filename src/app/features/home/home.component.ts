@@ -9,6 +9,7 @@ import { Project } from '../../core/models/project.model';
   standalone: true,
   imports: [
     ActiveTasksComponent,
+    TaskBoardComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
