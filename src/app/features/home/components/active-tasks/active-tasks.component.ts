@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProjectStatisticsComponent } from '../project-statistics/project-statistics.component';
+import { ProgressTasksComponent } from '../progress-tasks/progress-tasks.component';
 
 @Component({
   selector: 'app-active-tasks',

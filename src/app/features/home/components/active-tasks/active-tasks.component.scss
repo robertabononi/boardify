@@ -1,0 +1,20 @@
+.at {
+    &__title {
+        color: #fff;
+        font-size: 2.4rem;
+        margin-bottom: 2.4rem;
+    }
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.4rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .at {
+        &__content {
+            grid-template-columns: 1fr;
+        }
+    }
+}
