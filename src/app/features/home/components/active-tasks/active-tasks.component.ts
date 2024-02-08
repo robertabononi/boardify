@@ -5,7 +5,10 @@ import { ProgressTasksComponent } from '../progress-tasks/progress-tasks.compone
 @Component({
   selector: 'app-active-tasks',
   standalone: true,
-  imports: [],
+  imports: [
+    ProjectStatisticsComponent,
+    ProgressTasksComponent
+  ],
   templateUrl: './active-tasks.component.html',
   styleUrl: './active-tasks.component.scss'
 })
