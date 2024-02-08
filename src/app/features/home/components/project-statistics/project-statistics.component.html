@@ -1,3 +1,13 @@
-<div class="ps">
+<div *ngIf="projects" class="ps">
     <h3 class="ps__title">Project statistics</h3>
+
+    <ul class="ps__statistics">
+        <li *ngFor="let statistic of projectStatistics" class="ps__statistic">
+            <span class="ps__statistic__icon" [ngStyle]="{'background-color': statistic.color}"></span>
+            <div class="ps__statistic__data">
+                <p>{{ statistic.total }} {{ statistic.label }}</p>
+                <span>{{ statistic.subtitle }}</span>
+            </div>
+        </li>
+    </ul>
 </div>

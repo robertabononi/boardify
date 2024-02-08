@@ -1,6 +1,33 @@
 .ps {
-    background-color: #ffffff2c;
+    padding: 1.6rem;
+    background-color: #1a1c1e;
+    height: 100%;
+    border-radius: 1.6rem;
     &__title {
         font-size: 2rem;
+        margin-bottom: 1.6rem;
+    }
+    &__statistics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.6rem 0;
+        padding: 0;
+    }
+    &__statistic {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        &__icon {
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 999px;
+        }
+        &__data {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
     }
 }
