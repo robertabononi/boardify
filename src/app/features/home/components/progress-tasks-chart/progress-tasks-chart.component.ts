@@ -30,21 +30,26 @@ export class ProgressTasksChartComponent implements OnInit {
 
   ngOnInit(): void {
     if (typeof document !== 'undefined') {
-      this.defineChartData();
+      this.defineChartSeriesData();
       this.myChart = echarts.init(document.getElementById('progressTasksChart'));
       this.myChart.setOption(this.defineChartOptions());
     }
   }
 
-  defineChartData(): void {
-    this.projectsData.forEach(project => {
+  defineChartSeriesData(): void {
+    this.projectsData.forEach((project, index) => {
       this.chartData.push({
+        type: 'bar',
+        coordinateSystem: 'polar',
+        emphasis: { focus: 'series' },
+        showBackground: true,
         name: project.name,
-        value: project.value,
+        data: [project.value],
         itemStyle: {
           borderRadius: [100, 100, 100, 100],
           color: project.color,
-        }
+        },
+        stack: String.fromCharCode(65 + index).toLowerCase(),
       });
     });
   }
@@ -52,7 +57,7 @@ export class ProgressTasksChartComponent implements OnInit {
   defineChartOptions(): any {
     return {
       polar: {
-        radius: [30, '100%']
+        radius: [30, '150%']
       },
       angleAxis: {
         max: 100,
@@ -68,13 +73,20 @@ export class ProgressTasksChartComponent implements OnInit {
         axisLine: { show: false },
         axisTick: { show: false },
         axisLabel: { show: false },
+        data: this.chartData.map(x => x.name),
       },
-      series: {
-        type: 'bar',
-        coordinateSystem: 'polar',
-        showBackground: true,
-        data: this.chartData,
-      },
+      series: this.chartData,
+      legend: {
+        show: true,
+        orient: 'vertical',
+        top: 'center',
+        left: 0,
+        itemWidth: 10,
+        itemHeight: 10,
+        borderRadius: 50,
+        textStyle: { color: "#fff" },
+        data: this.chartData.map(x => x.name)
+      }
     };
   }
 }
