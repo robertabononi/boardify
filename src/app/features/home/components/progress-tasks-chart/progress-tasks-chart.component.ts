@@ -18,13 +18,18 @@ export class ProgressTasksChartComponent implements OnInit {
   projectsData = [
     {
       name: 'Teste 1',
-      value: 10,
+      value: 82,
       color: '#827df4'
     },
     {
       name: 'Teste 2',
-      value: 50,
+      value: 62,
       color: '#e6b0ef'
+    },
+    {
+      name: 'Teste 3',
+      value: 33,
+      color: '#19b3e2'
     }
   ];
 
@@ -45,6 +50,7 @@ export class ProgressTasksChartComponent implements OnInit {
         showBackground: true,
         name: project.name,
         data: [project.value],
+        barGap: '100%',
         itemStyle: {
           borderRadius: [100, 100, 100, 100],
           color: project.color,
@@ -57,7 +63,8 @@ export class ProgressTasksChartComponent implements OnInit {
   defineChartOptions(): any {
     return {
       polar: {
-        radius: [30, '150%']
+        radius: [20, 110],
+        center: ['85%', '50%']
       },
       angleAxis: {
         max: 100,
@@ -78,15 +85,22 @@ export class ProgressTasksChartComponent implements OnInit {
       series: this.chartData,
       legend: {
         show: true,
+        data: this.chartData.map(x => x.name),
         orient: 'vertical',
-        top: 'center',
-        left: 0,
+        icon: 'circle',
+        x: 'left',
+        y: 'center',
+        padding: 0,
         itemWidth: 10,
         itemHeight: 10,
-        borderRadius: 50,
         textStyle: { color: "#fff" },
-        data: this.chartData.map(x => x.name)
-      }
+        formatter: (name: string) => {
+          const value = this.chartData
+            .filter(x => x.name === name)
+            .map(x => x.data[0]);
+          return `${name} ${value}%`
+        },
+      },
     };
   }
 }
