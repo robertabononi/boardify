@@ -1,5 +1,8 @@
 <div class="tb">
-    <section class="tb__column">
-        <h3 class="tb__column__title">Paused</h3>
+    <section *ngFor="let status of taskBoardService.taskListByStatus" class="tb__column">
+        <div class="tb__column__title-and-counter">
+            <h3 class="tb__column__title">{{ status.name | translate }}</h3>
+            <span>{{ status.taskList.length }}</span>
+        </div>
     </section>
 </div>

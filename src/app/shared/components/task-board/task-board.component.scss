@@ -1,5 +1,14 @@
 .tb {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+
     &__column {
+        width: 33.33%;
+        &__title-and-counter {
+            display: flex;
+            align-items: center;
+        }
         &__title {
             font-size: 1.6rem;
         }

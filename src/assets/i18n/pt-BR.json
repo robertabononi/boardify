@@ -1,1 +1,6 @@
-{}
+{
+    "BACKLOG": "Backlog",
+    "IN_PROGRESS": "In Progress",
+    "PAUSED": "Paused",
+    "DONE": "Done"
+}
