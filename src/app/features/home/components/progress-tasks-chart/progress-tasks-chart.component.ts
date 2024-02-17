@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import * as echarts from 'echarts';
 import { NgxEchartsDirective } from 'ngx-echarts';
+import { ProjectService } from '../../../../shared/services/project/project.service';
+import { Project } from '../../../../core/models/project.model';
 
 @Component({
   selector: 'app-progress-tasks-chart',
@@ -15,30 +17,37 @@ import { NgxEchartsDirective } from 'ngx-echarts';
 export class ProgressTasksChartComponent implements OnInit {
   myChart: any;
   chartData: any[] = [];
-  projectsData = [
-    {
-      name: 'Teste 1',
-      value: 82,
-      color: '#827df4'
-    },
-    {
-      name: 'Teste 2',
-      value: 62,
-      color: '#e6b0ef'
-    },
-    {
-      name: 'Teste 3',
-      value: 33,
-      color: '#19b3e2'
-    }
-  ];
+  projectsData: any[] = [];
+
+  constructor(
+    private projectService: ProjectService,
+  ) {}
 
   ngOnInit(): void {
-    if (typeof document !== 'undefined') {
-      this.defineChartSeriesData();
-      this.myChart = echarts.init(document.getElementById('progressTasksChart'));
-      this.myChart.setOption(this.defineChartOptions());
-    }
+    this.projectService.projects$.subscribe({
+      next: response => {
+        this.getProjectDataForChart(response);
+
+        if (typeof document !== 'undefined') {
+          this.defineChartSeriesData();
+          this.myChart = echarts.init(document.getElementById('progressTasksChart'));
+          this.myChart.setOption(this.defineChartOptions());
+        }
+      }
+    });
+  }
+
+  getProjectDataForChart(project: Project[]) {
+    const projectsDataForChart: any[] = [];
+    project.forEach(project => {
+      projectsDataForChart.push({
+        name: project.title,
+        value: project.progressPercentage,
+        color: project.color
+      });
+    });
+
+    this.projectsData = projectsDataForChart;
   }
 
   defineChartSeriesData(): void {

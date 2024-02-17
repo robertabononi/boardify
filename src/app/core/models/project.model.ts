@@ -3,6 +3,7 @@ import { Task } from "./task.model";
 export class Project {
     id!: string;
     title!: string;
+    color!: string;
     progressPercentage!: number;
     createdDate!: string;
     updateDate!: string;
