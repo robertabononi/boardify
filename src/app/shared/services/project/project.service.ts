@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { RestService } from '../rest/rest.service';
 import { environment } from '../../../../environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Project } from '../../../core/models/project.model';
+import { Project } from '../../../core/models/project';
 
 @Injectable({
   providedIn: 'root'

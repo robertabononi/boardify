@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
 import { NgxEchartsDirective } from 'ngx-echarts';
 import { ProjectService } from '../../../../shared/services/project/project.service';
-import { Project } from '../../../../core/models/project.model';
+import { Project } from '../../../../core/models/project';
 
 @Component({
   selector: 'app-progress-tasks-chart',

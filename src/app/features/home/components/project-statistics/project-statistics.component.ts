@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProjectService } from '../../../../shared/services/project/project.service';
-import { Project } from '../../../../core/models/project.model';
+import { Project } from '../../../../core/models/project';
 
 @Component({
   selector: 'app-project-statistics',

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ActiveTasksComponent } from './components/active-tasks/active-tasks.component';
 import { TaskBoardComponent } from '../../shared/components/task-board/task-board.component';
 import { ProjectService } from '../../shared/services/project/project.service';
-import { Project } from '../../core/models/project.model';
+import { Project } from '../../core/models/project';
 
 @Component({
   selector: 'app-home',

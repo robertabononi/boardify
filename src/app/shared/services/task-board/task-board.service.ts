@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { ProjectService } from './../project/project.service';
-import { Task } from '../../../core/models/task.model';
+import { Task } from '../../../core/models/task';
 import { TaskStatusEnum } from '../../enums/task-status.enum';
 
 @Injectable({
