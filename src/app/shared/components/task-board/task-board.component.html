@@ -4,5 +4,10 @@
             <h3 class="tb__column__title">{{ status.name | translate }}</h3>
             <span>{{ status.taskList.length }}</span>
         </div>
+        <ol class="tb__column__task-list">
+            <li *ngFor="let task of status.taskList" class="tb__column__task-list__card">
+                <h4>{{ task.title }}</h4>
+            </li>
+        </ol>
     </section>
 </div>

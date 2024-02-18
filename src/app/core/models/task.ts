@@ -10,3 +10,12 @@ export interface Task {
         title: string;
     };
 }
+
+export interface TaskByStatus {
+    [status: TaskStatusEnum | string]: Task[];
+}
+
+export interface TaskListByStatus {
+    name: TaskStatusEnum | string;
+    taskList: Task[];
+}
