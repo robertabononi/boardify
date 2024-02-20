@@ -1,5 +1,3 @@
-@import '../../../../assets/styles/variables';
-
 .tb {
     display: grid;
     gap: 1.2rem;
@@ -8,7 +6,7 @@
     position: absolute;
     left: 0;
     width: 100vw;
-    -ms-overflow-style: none;  /* IE and Edge */
+    -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
         display: none; /* Chrome, Safari and Opera */
@@ -25,11 +23,6 @@
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
-            &__card {
-                background-color: $color-gray;
-                padding: 1.6rem;
-                border-radius: 1.2rem;
-            }
         }
         &:first-child {
             margin-left: 2.4rem;

@@ -1,0 +1,37 @@
+@import '../../../../assets/styles/variables';
+
+.tc {
+    &__card {
+        background-color: $color-gray;
+        padding: 1.6rem;
+        border-radius: 1.2rem;
+        &__title {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+        &__project {
+            font-size: 1.2rem;
+            color: $color-blue;
+            margin-bottom: 1.6rem;
+        }
+        &__description {
+            font-size: 1.2rem;
+            color: $color-light-gray;
+            margin-bottom: 1.6rem;
+        }
+        &__comments-and-files {
+            display: flex;
+            margin-bottom: 1.6rem;
+        }
+        &__substasks {
+            display: flex;
+            align-items: center;
+            &__progress-bar {
+                flex-grow: 1;
+                height: 0.4rem;
+                margin: 0 1rem;
+                border-radius: 99.9rem;
+            }
+        }
+    }
+}

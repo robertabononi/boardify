@@ -6,8 +6,7 @@
         </div>
         <ol class="tb__column__task-list">
             <li *ngFor="let task of status.taskList" class="tb__column__task-list__card">
-                <h4>{{ task.title }}</h4>
-                <p>{{ task.project?.title }}</p>
+                <app-task-card [task]="task"></app-task-card>
             </li>
         </ol>
     </section>
