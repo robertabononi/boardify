@@ -20,9 +20,9 @@
         align-items: center;
         gap: 0.8rem;
         &__icon {
-            width: 2.4rem;
-            height: 2.4rem;
-            border-radius: 999px;
+            min-width: 2.4rem;
+            min-height: 2.4rem;
+            border-radius: 99.9rem;
         }
         &__data {
             height: 100%;
