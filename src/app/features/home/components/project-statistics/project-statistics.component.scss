@@ -1,6 +1,8 @@
+@import '../../../../../../src/assets/styles/variables';
+
 .ps {
     padding: 1.6rem;
-    background-color: #1a1c1e;
+    background-color: $color-gray;
     height: 100%;
     border-radius: 1.6rem;
     &__title {
