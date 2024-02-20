@@ -16,8 +16,13 @@ import { TaskBoardService } from '../../services/task-board/task-board.service';
 })
 export class TaskBoardComponent {
   public taskBoardService = inject(TaskBoardService);
+  public columnsLength: number = 0;
 
   ngOnInit(): void {
     this.taskBoardService.separateTasksByStatus();
+
+    if (this.taskBoardService.taskListByStatus) {
+      this.columnsLength = this.taskBoardService.taskListByStatus.length;
+    }
   }
 }

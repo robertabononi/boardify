@@ -1,4 +1,4 @@
-<div class="tb">
+<div class="tb" [ngStyle]="{'grid-template-columns': 'repeat(' + columnsLength + ', 33%)'}">
     <section *ngFor="let status of taskBoardService.taskListByStatus" class="tb__column">
         <div class="tb__column__title-and-counter">
             <h3 class="tb__column__title">{{ status.name | translate }}</h3>
@@ -7,6 +7,7 @@
         <ol class="tb__column__task-list">
             <li *ngFor="let task of status.taskList" class="tb__column__task-list__card">
                 <h4>{{ task.title }}</h4>
+                <p>{{ task.project?.title }}</p>
             </li>
         </ol>
     </section>
