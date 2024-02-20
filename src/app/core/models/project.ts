@@ -10,3 +10,8 @@ export interface Project {
     endDate: string | null;
     tasks: Task[];
 }
+
+export interface TaskProject {
+    id: string;
+    title: string;
+}
